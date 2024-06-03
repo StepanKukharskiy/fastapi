@@ -15,15 +15,6 @@ result = generator(messages,  max_new_tokens=300)
 
 app = FastAPI()
 
-
-@app.get("/")
-def read_root():
-    return { 
-        "Result": result
-        }
-
-app = FastAPI()
-
 @app.get("/")
 async def root():
     return {"greeting": "Hello, World!", "message": "Welcome to FastAPI!", "result": result}
